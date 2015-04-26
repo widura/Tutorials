@@ -23,4 +23,19 @@ public class Dog {
     public String toString() {
         return this.name;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof Dog && ((Dog) o).getName().equals(this.name)) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+    @Override
+    public int hashCode() {
+        return name != null ? name.hashCode() : 0;
+    }
 }
